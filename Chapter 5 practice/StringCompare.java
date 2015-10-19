@@ -32,5 +32,6 @@ public class StringCompare
             System.out.println("word 1 is not less than word 2");
         }
         
-        String word1_three = word1.substring(0
+    }
+}
             
