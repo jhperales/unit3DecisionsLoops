@@ -15,6 +15,22 @@ public class CircleOverlap
       double xcenter2 = 40;
       double ycenter2 = 0;
 
-      System.out.println("im done. do this yourself by hand");
-   }
+      if (radius1 + radius2 < 40)
+      {
+          System.out.println("Disjoint");
+      }
+      else if (radius1 + xcenter1 >= radius2 + xcenter2)
+      {
+          System.out.println("Mutually Contained");
+      }
+      else if (radius1 + radius2 == 40)
+      {
+          System.out.println("Tangent");
+      }
+      else
+      {
+          System.out.println("Overlapping");
+      }
+    }
 }
+        
