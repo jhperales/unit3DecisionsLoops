@@ -6,7 +6,9 @@ public class MontyHall
         int switchWins = 0;
         int stayWins = 0;
         Random gen = new Random();
-        for(int plays = 0;plays < 32768;plays++ ){
+        for(int plays = 0;
+            plays < 1000;
+            plays++ ){
             int[] doors = {0,0,0};
             doors[gen.nextInt(3)] = 1;
             int choice = gen.nextInt(3);
