@@ -9,8 +9,8 @@ import info.gridworld.grid.Location;
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
  * Also demonstrates how to provide accessor methods to make the class testable by unit tests.
  * 
- * @author @gcschmit
- * @version 18 July 2014
+ * @author @jperales
+ * @version 10 November 2015 (Last modified)
  */
 public class GameOfLife
 {
@@ -18,8 +18,8 @@ public class GameOfLife
     private ActorWorld world;
     
     // the game board will have 5 rows and 5 columns
-    private final int ROWS = 5;
-    private final int COLS = 5;
+    private final int ROWS = 11;
+    private final int COLS = 11;
     
     /**
      * Default constructor for objects of class GameOfLife
@@ -53,9 +53,18 @@ public class GameOfLife
     private void populateGame()
     {
         // constants for the location of the three cells initially alive
-        final int X1 = 2, Y1 = 0;
-        final int X2 = 0, Y2 = 2;
-        final int X3 = 1, Y3 = 2;
+        final int X1 = 5, Y1 = 3;
+        final int X2 = 6, Y2 = 3;
+        final int X3 = 7, Y3 = 3;
+        final int X4 = 6, Y4 = 4;
+        final int X5 = 6, Y5 = 5;
+        final int X6 = 6, Y6 = 6;
+        final int X7 = 6, Y7 = 7;
+        final int X8 = 5, Y8 = 7;
+        final int X9 = 4, Y9 = 7;
+        final int X10 = 4, Y10 = 6;
+        
+        
 
         // the grid of Actors that maintains the state of the game
         //  (alive cells contains actors; dead cells do not)
@@ -73,6 +82,34 @@ public class GameOfLife
         Rock rock3 = new Rock();
         Location loc3 = new Location(Y3, X3);
         grid.put(loc3, rock3);
+        
+        Rock rock4 = new Rock();
+        Location loc4 = new Location(Y4, X4);
+        grid.put(loc4, rock4);
+        
+        Rock rock5 = new Rock();
+        Location loc5 = new Location(Y5, X5);
+        grid.put(loc5, rock5);
+        
+        Rock rock6 = new Rock();
+        Location loc6 = new Location(Y6, X6);
+        grid.put(loc6, rock6);
+        
+        Rock rock7 = new Rock();
+        Location loc7 = new Location(Y7, X7);
+        grid.put(loc7, rock7);
+        
+        Rock rock8 = new Rock();
+        Location loc8 = new Location(Y8, X8);
+        grid.put(loc8, rock8);
+        
+        Rock rock9 = new Rock();
+        Location loc9 = new Location(Y9, X9);
+        grid.put(loc9, rock9);
+        
+        Rock rock10 = new Rock();
+        Location loc10 = new Location(Y10, X10);
+        grid.put(loc10, rock10);
     }
 
     /**
@@ -93,6 +130,7 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
+        
         
     }
     
