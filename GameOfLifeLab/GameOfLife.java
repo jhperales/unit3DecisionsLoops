@@ -53,16 +53,16 @@ public class GameOfLife
     private void populateGame()
     {
         // constants for the location of the three cells initially alive
-        final int X1 = 5, Y1 = 3;
-        final int X2 = 6, Y2 = 3;
-        final int X3 = 7, Y3 = 3;
-        final int X4 = 6, Y4 = 4;
-        final int X5 = 6, Y5 = 5;
-        final int X6 = 6, Y6 = 6;
-        final int X7 = 6, Y7 = 7;
-        final int X8 = 5, Y8 = 7;
-        final int X9 = 4, Y9 = 7;
-        final int X10 = 4, Y10 = 6;
+        final int X1 = 4, Y1 = 3;
+        final int X2 = 5, Y2 = 3;
+        final int X3 = 6, Y3 = 3;
+        final int X4 = 5, Y4 = 4;
+        final int X5 = 5, Y5 = 5;
+        final int X6 = 5, Y6 = 6;
+        final int X7 = 5, Y7 = 7;
+        final int X8 = 4, Y8 = 7;
+        final int X9 = 3, Y9 = 7;
+    final int X10 = 3, Y10 = 6;
         
         
 
