@@ -83,4 +83,5 @@ Submission:
 * ``````````````
 * 
 * - grid size is 8 by 8
-* - 
+* - alive cells are represented by rocks
+* - dead cells are empty spaces
