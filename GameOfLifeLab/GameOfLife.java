@@ -5,7 +5,7 @@ import info.gridworld.grid.Grid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
 import java.util.ArrayList;
-import java.util.Interator;
+
 
 /**
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
@@ -145,13 +145,13 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
-        occupiedLocations = grid.getOccupiedLocations();
-        boolean dead_alive = new ArrayList();
+        ArrayList<String> occupiedLocations = grid.getOccupiedLocations();
+        ArrayList<boolean> dead_alive = new ArrayList();
         
         
-        for (int i = 0; i < occupiedLocations.size(); i++)
+        for (int i = 0; i < occupiedLocations.size() + 1; i++)
         {
-           if (grid.isValid(i) == true)
+           if (grid.isValid(occupiedLocations(i)) == true)
            {
                listOfEmptyNeighbors = grid.getEmptyAdjacentLocations();
                listOfOccupiedNeighbors_alive = grid.getOccupiedAdjacentLocations();
@@ -181,6 +181,8 @@ public class GameOfLife
                }
            }
         }
+        
+        
     }
     
     /**
