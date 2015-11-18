@@ -145,7 +145,7 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
-        ArrayList<String> occupiedLocations = grid.getOccupiedLocations();
+        ArrayList<Location> occupiedLocations = grid.getOccupiedLocations();
         ArrayList<boolean> dead_alive = new ArrayList();
         
         
