@@ -7,6 +7,7 @@ import info.gridworld.grid.Location;
 import java.util.ArrayList;
 
 
+
 /**
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
  * Also demonstrates how to provide accessor methods to make the class testable by unit tests.
@@ -146,7 +147,7 @@ public class GameOfLife
         
         // insert magic here...
         ArrayList<Location> occupiedLocations = grid.getOccupiedLocations();
-        ArrayList<boolean> dead_alive = new ArrayList();
+        boolean[] dead_alive = new boolean[10];
         
         
         for (int i = 0; i < occupiedLocations.size() + 1; i++)
