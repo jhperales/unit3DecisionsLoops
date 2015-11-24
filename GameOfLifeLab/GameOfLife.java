@@ -4,6 +4,7 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
+import java.util.Arrays;
 import java.util.ArrayList;
 
 
@@ -146,16 +147,16 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
-        ArrayList<Location> occupiedLocations = grid.getOccupiedLocations();
-        boolean[] dead_alive = new boolean[10];
+        ArrayList<Location> occupiedLocations = new ArrayList<Location>(grid.getOccupiedLocations());
+        ArrayList<Boolean> dead_alive = new ArrayList<Boolean>();
         
         
-        for (int i = 0; i < occupiedLocations.size() + 1; i++)
+        for (int i = 0; i < occupiedLocatoins.size() + 1; i++)
         {
-           if (grid.isValid(occupiedLocations(i)) == true)
+           if (grid.isValid(occupiedLocations.get(i)) == true)
            {
-               listOfEmptyNeighbors = grid.getEmptyAdjacentLocations();
-               listOfOccupiedNeighbors_alive = grid.getOccupiedAdjacentLocations();
+               ArrayList<Location> listOfEmptyNeighbors = new ArrayList<Location>(grid.getEmptyAdjacentLocations());
+               ArrayList<location> listOfOccupiedNeighbors_alive = new ArrayList<Location>(grid.getOccupiedAdjacentLocations());
                if (listOfEmptyNeighbors.size() < 2)
                {
                    dead_alive.add(false);
