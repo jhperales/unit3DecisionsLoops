@@ -151,12 +151,12 @@ public class GameOfLife
         ArrayList<Boolean> dead_alive = new ArrayList<Boolean>();
         
         
-        for (int i = 0; i < occupiedLocatoins.size() + 1; i++)
+        for (int i = 0; i < occupiedLocations.size() + 1; i++)
         {
            if (grid.isValid(occupiedLocations.get(i)) == true)
            {
-               ArrayList<Location> listOfEmptyNeighbors = new ArrayList<Location>(grid.getEmptyAdjacentLocations());
-               ArrayList<location> listOfOccupiedNeighbors_alive = new ArrayList<Location>(grid.getOccupiedAdjacentLocations());
+               ArrayList<Location> listOfEmptyNeighbors = 
+               ArrayList<location> listOfOccupiedNeighbors_alive = 
                if (listOfEmptyNeighbors.size() < 2)
                {
                    dead_alive.add(false);
