@@ -147,42 +147,19 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
-        ArrayList<Location> occupiedLocations = new ArrayList<Location>(grid.getOccupiedLocations());
-        ArrayList<Boolean> dead_alive = new ArrayList<Boolean>();
         
+        ArrayList<Location> cells = new ArrayList<Location>(grid.getOccupiedLocations());
         
-        for (int i = 0; i < occupiedLocations.size() + 1; i++)
+        for (int i = 0; i < cells.size(); i ++)
         {
-           if (grid.isValid(occupiedLocations.get(i)) == true)
+           check = cells.get(i);
+           if (grid.isValid(check)
            {
-               ArrayList<Location> listOfEmptyNeighbors = 
-               ArrayList<location> listOfOccupiedNeighbors_alive = 
-               if (listOfEmptyNeighbors.size() < 2)
+               listOfOccupied = grid.getOccupiedAdjacentLocations(check);
+               if (listOfOccupied.size() == 2 || listOfOccupied == 3)
                {
-                   dead_alive.add(false);
-               }
-               if (listOfOccupiedNeighbors_alive.size() == 2 || listOfOccupiedNeighbors.size() == 3)
-               {
-                  dead_alive.add(true);
-               }
-               if (listOfOccupiedNeighbors_alive.size >  3)
-               {
-                   dead_alive.add(false);
-               }
-           }
-           if (grid.isValid(i) == false)
-           {
-               listOfOccupiedNeighbors_dead = grid.getOccupiedAdjacentLocations();
-               if (listOfOccupiedNeighbors_dead == 3)
-               {
-                   dead_alive.add(true);
-               }
-               else
-               {
-                   dead_alive.add(false);
-               }
-           }
-        }
+                   
+        
         
         
     }
