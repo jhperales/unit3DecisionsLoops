@@ -57,7 +57,7 @@ public class GameOfLife
      */
     private void populateGame()
     {
-        // constants for the location of the three cells initially alive
+        // constants for the location of the ten cells initially alive
         final int X1 = 4, Y1 = 3;
         final int X2 = 5, Y2 = 3;
         final int X3 = 6, Y3 = 3;
@@ -148,21 +148,48 @@ public class GameOfLife
         
         // insert magic here...
         
-        ArrayList<Location> cells = new ArrayList<Location>(grid.getOccupiedLocations());
+        ArrayList<Location> cells = new ArrayList<Location>();
+        cells.add(grid.getOccupiedLocations());
         
-        for (int i = 0; i < cells.size(); i ++)
+        
+        
+        for (int f = 0; f < cells.size(); f++)
         {
-           check = cells.get(i);
-           if (grid.isValid(check)
-           {
-               listOfOccupied = grid.getOccupiedAdjacentLocations(check);
-               if (listOfOccupied.size() == 2 || listOfOccupied == 3)
-               {
+            
+            if (grid.isValid(cells.get(f)))
+            {
+                listOfOccupied = grid.getOccupiedAdjacentLocations(cells.get(f));
+                if (listOfOccupied.size() == 2 || listOfOccupied.size() == 3)
+                {
+                    Rock new_rock = new Rock();
+                    Locatoin new_rock_loc = new Location(cells.get(f));
+                    grid.put(new_rock_loc, new_rock);
+                    objects.add(new_rock);
+                }
+            
+            }
+            if (grid.isValid(cells.get(f)))
+            {
+                listOfOccupied = grid.getOccupiedAdjacentLocations(cells.get(f));
+                if (listOfOccupied == 3)
+                {
+                    Rock new_rock = new Rock();
+                    Locatoin new_rock_loc = new Location(cells.get(f));
+                    grid.put(new_rock_loc, new_rock);
+                    objects.add(new_rock);
+                }
+            }
+        }
+                
+            
+    }
+    
+                    
                    
         
         
         
-    }
+
     
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
