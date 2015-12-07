@@ -147,42 +147,35 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
+        BoundedGrid<Actor> newGrid = new BoundedGrid<Actor>(ROWS, COLS);
+       
         
-        ArrayList<Location> cells = new ArrayList<Location>();
-        cells.add(grid.getOccupiedLocations());
-        
-        
-        
-        for (int f = 0; f < cells.size(); f++)
+        for (int f = 0; f < ROWS; f++)
         {
-            
-            if (grid.isValid(cells.get(f)))
+            for (int j = 0; j < COLS; j++)
             {
-                listOfOccupied = grid.getOccupiedAdjacentLocations(cells.get(f));
+                Location location = new Location(f, j);
+                
                 if (listOfOccupied.size() == 2 || listOfOccupied.size() == 3)
                 {
-                    Rock new_rock = new Rock();
-                    Locatoin new_rock_loc = new Location(cells.get(f));
-                    grid.put(new_rock_loc, new_rock);
-                    objects.add(new_rock);
+                    Rock rock = new Rock();
+                    Location loc = new Location(f, j);
+                    newGrid.put(loc, rock);
                 }
-            
-            }
-            if (grid.isValid(cells.get(f)))
-            {
-                listOfOccupied = grid.getOccupiedAdjacentLocations(cells.get(f));
-                if (listOfOccupied == 3)
+                if (listOfOccupied.size() == 3)
                 {
-                    Rock new_rock = new Rock();
-                    Locatoin new_rock_loc = new Location(cells.get(f));
-                    grid.put(new_rock_loc, new_rock);
-                    objects.add(new_rock);
+                    Rock rock = new Rock();
+                    Location loc = new Location(f, j);
+                    newGrid.put(loc, rock);
                 }
             }
-        }
                 
-            
-    }
+        }
+        
+        world.setGrid(newGrid);
+        world.show();
+        }
+    
     
                     
                    
