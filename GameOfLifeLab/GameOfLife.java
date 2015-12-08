@@ -24,7 +24,7 @@ public class GameOfLife
     // the game board will have 5 rows and 5 columns
     private final int ROWS = 11;
     private final int COLS = 11;
-    ArrayList objects = new ArrayList();
+    ArrayList<Actor> objects = new ArrayList<Actor>();
     
     /**
      * Default constructor for objects of class GameOfLife
@@ -157,6 +157,7 @@ public class GameOfLife
                 Location location = new Location(f, j);
                 ArrayList<Location> listOfOccupied = new ArrayList<Location>();
 				listOfOccupied.addAll(grid.getOccupiedAdjacentLocations(location));
+				if (
                 if (listOfOccupied.size() == 2 || listOfOccupied.size() == 3)
                 {
                     Rock rock = new Rock();
