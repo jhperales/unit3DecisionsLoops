@@ -155,7 +155,8 @@ public class GameOfLife
             for (int j = 0; j < COLS; j++)
             {
                 Location location = new Location(f, j);
-                
+                ArrayList<Location> listOfOccupied = new ArrayList<Location>();
+				listOfOccupied.addAll(grid.getOccupiedAdjacentLocations(location));
                 if (listOfOccupied.size() == 2 || listOfOccupied.size() == 3)
                 {
                     Rock rock = new Rock();
@@ -174,15 +175,7 @@ public class GameOfLife
         
         world.setGrid(newGrid);
         world.show();
-        }
-    
-    
-                    
-                   
-        
-        
-        
-
+    }
     
     /**
      * Returns the actor at the specified row and column. Intended to be used for unit testing.
