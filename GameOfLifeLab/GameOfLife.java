@@ -1,4 +1,5 @@
 import info.gridworld.actor.Actor;
+import info.gridworld.world.World;
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.actor.Rock;
 import info.gridworld.grid.Grid;
@@ -156,22 +157,27 @@ public class GameOfLife
             {
                 Location location = new Location(f, j);
                 ArrayList<Location> listOfOccupied = new ArrayList<Location>();
-				listOfOccupied.addAll(grid.getOccupiedAdjacentLocations(location));
-				if (
-                if (listOfOccupied.size() == 2 || listOfOccupied.size() == 3)
+                listOfOccupied.addAll(grid.getOccupiedAdjacentLocations(location));
+                if (getActor(f, j)!= null)
                 {
-                    Rock rock = new Rock();
-                    Location loc = new Location(f, j);
-                    newGrid.put(loc, rock);
+                    if (listOfOccupied.size() == 2 || listOfOccupied.size() == 3)
+                    {
+                        Rock rock = new Rock();
+                        Location loc = new Location(f, j);
+                        newGrid.put(loc, rock);
+                    }
                 }
-                if (listOfOccupied.size() == 3)
+                if (getActor(f, j) == null)
                 {
-                    Rock rock = new Rock();
-                    Location loc = new Location(f, j);
-                    newGrid.put(loc, rock);
+                    if (listOfOccupied.size() == 3)
+                    {
+                        Rock rock = new Rock();
+                        Location loc = new Location(f, j);
+                        newGrid.put(loc, rock);
+                    }
                 }
-            }
                 
+            }
         }
         
         world.setGrid(newGrid);
@@ -221,6 +227,7 @@ public class GameOfLife
     public static void main(String[] args)
     {
         GameOfLife game = new GameOfLife();
+        if (
     }
 
 }
